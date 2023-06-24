@@ -4,33 +4,52 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style>
+      table thead {
+        background: #333;
+        color: #fff;
+      }
+      table tfoot {
+        background: gray;
+        color: #fff;
+      }
+      table tbody {
+        background: #efefef;
+      }
+    </style>
   </head>
   <body>
     <table border="1" width="100%" cellspacing="0" cellpadding="5">
-      <tr>
-        <th width="5%">STT</th>
-        <th>Họ tên</th>
-        <th>Thu nhập</th>
-      </tr>
-      <tr>
-        <td rowspan="3">1</td>
-        <td>Hoàng An</td>
-        <td>5.000.000</td>
-      </tr>
-      <tr>
-        <!-- <td>2</td> -->
-        <td>Sơn Đặng</td>
-        <td>50.000.000</td>
-      </tr>
-      <tr>
-        <!-- <td>3</td> -->
-        <td>Nguyễn Dương</td>
-        <td>10.000.000</td>
-      </tr>
-      <tr>
-        <td colspan="2">Tổng</td>
-        <td>50.000.000</td>
-      </tr>
+      <thead>
+        <tr>
+          <th width="5%">STT</th>
+          <th>Họ tên</th>
+          <th>Thu nhập</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td rowspan="3">1</td>
+          <td>Hoàng An</td>
+          <td>5.000.000</td>
+        </tr>
+        <tr>
+          <!-- <td>2</td> -->
+          <td>Sơn Đặng</td>
+          <td>50.000.000</td>
+        </tr>
+        <tr>
+          <!-- <td>3</td> -->
+          <td>Nguyễn Dương</td>
+          <td>10.000.000</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <th colspan="2">Tổng</th>
+          <td>50.000.000</td>
+        </tr>
+      </tfoot>
     </table>
   </body>
 </html>

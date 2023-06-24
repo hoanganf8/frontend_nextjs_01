@@ -1,0 +1,26 @@
+h2 ~ ul, h2 ~ div ul{
+    color: red;
+}
+
+/* h2 ~ div ul{
+    color: red;
+} */
+
+/*
+selector1, selector2, selector3 {
+
+}
+*/
+
+/* .box p + h2, .box p + h2 + h2 {
+    color: red;
+} */
+
+/* .box h2 + h2 + h2 {
+    color: red;
+} */
+
+.todos input:checked ~ span{
+    color: red;
+    text-decoration: line-through;
+}
