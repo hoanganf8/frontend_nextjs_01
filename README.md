@@ -14,3 +14,8 @@
 - /duong-dan => tuyệt đối => Đẩy thẳng về gốc (root) Sau tên miền
 
 Lưu ý: Trong 3 đường dẫn trên sẽ có 1 đường dẫn là tuyệt đối. Chọn đường dẫn đó và giải thích
+
+Tổng kết selector
+
+- Nhớ các selector đơn lẻ: #, ., tenthe, attribute
+- Nhớ các cách kết hợp: nằm trong, con, trên cùng 1 thẻ, +, ~

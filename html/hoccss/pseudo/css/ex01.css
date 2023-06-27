@@ -1,0 +1,56 @@
+/*
+Pseudo Element = Thành phần giả
+
+Cú pháp: 
+
+selector::pseudo {
+
+}
+
+a::before {
+
+}
+*/
+
+.title::before {
+    content: 'A';
+}
+
+.title::after {
+    content: 'B';
+}
+
+.page-title::after {
+    content: '';
+    display: block;
+    width: 0px;
+    height: 3px;
+    background: red;
+    transition: all 0.4s linear;
+}
+
+.page-title:hover::after {
+    width: 50px;
+}
+
+.content p::first-line {
+    color: red;
+}
+
+.content p::first-letter {
+    font-size: 2rem;
+    font-style: italic;
+}
+
+.content p::selection {
+    background: black;
+    color: yellow;
+}
+
+.email {
+    color: red;
+}
+
+.email::placeholder {
+    color: currentColor;
+}
