@@ -1,0 +1,30 @@
+/*
+Background CSS
+
+- background-color: Thay đổi màu nền
+- background-image: url(link)
+- background-size
+- background-attachment
+- background-position
+- background-repeat: Độ lặp của ảnh nền (no-repeat, repeat-x, repeat-y, repeat)
+
+=> background: Gộp tất cả các thuộc tính trên
+*/
+
+body {
+  height: 2000px;
+  color: #fff;
+  /* background-color: bisque;
+  background-image: url("https://fastly.picsum.photos/id/91/1000/500.jpg?hmac=SKlwbzM0HICxdSjwkI8KQKrtOTWWuUpuop_Z9AIusiI");
+  background-repeat: no-repeat;
+  background-position: 0 0; */
+  /* background-size: cover; */
+  /* background-attachment: fixed; */
+  background: bisque
+    url("https://fastly.picsum.photos/id/91/1000/500.jpg?hmac=SKlwbzM0HICxdSjwkI8KQKrtOTWWuUpuop_Z9AIusiI")
+    no-repeat 0 0 / cover fixed;
+}
+
+.box {
+  background-color: aqua;
+}

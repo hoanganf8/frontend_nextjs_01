@@ -1,0 +1,51 @@
+.box {
+  /* border-width: 3px;
+  border-style: double;
+  border-color: red; */
+
+  /* border: 3px double;
+  border-color: red; */
+
+  /* border-left: 3px solid red;
+  border-top: 3px solid green;
+  border-right: 3px solid blue;
+  border-bottom: 3px solid blueviolet; */
+
+  border-top-width: 3px;
+  border-left-width: 3px;
+  border-right-width: 3px;
+  border-bottom-width: 3px;
+
+  border-top-style: solid;
+  border-left-style: solid;
+  border-right-style: solid;
+  border-bottom-style: solid;
+
+  /* border-top-color: green;
+  border-left-color: green;
+  border-right-color: green;
+  border-bottom-color: green; */
+
+  border-color: green red blueviolet yellow;
+}
+
+.content {
+  width: 0;
+  height: 0;
+  border-width: 50px;
+  border-style: solid;
+  border-color: transparent transparent transparent blueviolet;
+}
+
+body {
+  background: rgb(164, 161, 4);
+}
+
+/*
+Border Style: 
+- none
+- solid
+- dashed
+- dotted
+- double
+*/
