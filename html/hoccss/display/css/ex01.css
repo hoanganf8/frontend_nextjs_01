@@ -1,0 +1,24 @@
+/*
+dislay: hiển thị
+- none => Ẩn
+- block => Chuyển về thẻ block
+- inline => Chuyển về thẻ inline
+- inline-block: Là thẻ block và cùng nằm trên 1 dòng, kích mặc định theo nội dung
+
+Ngoài ra: display còn rất nhiều giá trị phức tạp
+- list-item
+- flex
+- inline-flex
+- grid
+- table
+- table-cell
+....
+=> Học ở chuyên đề riêng
+*/
+.box {
+  border: 1px solid red;
+  /* display: none; */
+  /* visibility: hidden; */
+  display: inline-block;
+  width: 50px;
+}

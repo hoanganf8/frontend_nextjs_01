@@ -1,0 +1,48 @@
+/*
+float: Trôi thành phần html về bên trái hoặc bên phải theo thành phần cha trực tiếp
++ none
++ left
++ right
+
+Thuộc tính clear: Xử lý tình trạng tự động trôi các thành phần khi đặt dưới thành phần sử dụng float
++ left
++ right
++ both
+*/
+.box {
+  border: 1px solid red;
+  width: 300px;
+  margin: 30px auto;
+  /* padding: 15px; */
+  /* overflow: auto; */
+}
+
+.box::after {
+  content: "";
+  display: block; /*Bắt buộc*/
+  clear: both;
+}
+
+.col-1 {
+  width: 100px;
+  height: 50px;
+  background: green;
+  color: #fff;
+  float: left;
+}
+
+.col-2 {
+  background: red;
+  color: #fff;
+  width: 100px;
+  height: 100px;
+  float: left;
+}
+
+/* .text {
+  clear: both;
+} */
+
+.clearfix {
+  clear: both;
+}

@@ -1,0 +1,42 @@
+.box {
+  width: 200px;
+  height: 200px;
+  background: green;
+}
+
+.span {
+  border: 1px solid red;
+  width: 100px;
+  height: 100px;
+  display: inline-block;
+}
+
+.img {
+  width: 300px;
+  height: auto;
+  /* vertical-align: bottom; */
+}
+
+.images {
+  /* font-size: 0; */
+  /* line-height: 0; */
+  /* display: flex; */
+}
+
+/*
+width, height chỉ đặt được trong thẻ block
+
+Thẻ inine: Không đặt width, height, margin (top và bottom), padding (top bottom)
++ inline replace
++ inline none-replace
+*/
+
+.product {
+  background: rgb(0, 0, 0);
+  width: 200px;
+  color: #fff;
+}
+
+.product img {
+  display: block;
+}
