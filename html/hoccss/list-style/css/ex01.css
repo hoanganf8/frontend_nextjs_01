@@ -1,0 +1,29 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  outline: 0;
+}
+
+.box {
+  width: 300px;
+  border: 1px solid red;
+  margin: 30px auto;
+}
+
+.box ul {
+  /* list-style-position: inside;
+  list-style-type: upper-latin; */
+  /* list-style: inside square; */
+  list-style: none;
+}
+
+.box ul li::before {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background: url("../images/8725382_angle_right_b_icon.png") no-repeat left
+    center / 20px;
+  vertical-align: middle;
+}

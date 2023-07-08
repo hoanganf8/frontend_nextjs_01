@@ -1,0 +1,38 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  outline: 0;
+}
+
+.product {
+  width: 300px;
+  border: 1px solid #ddd;
+  margin: 30px auto;
+  position: relative;
+}
+
+.product img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.product .product-info {
+  padding: 15px;
+}
+
+.product .product-image {
+  position: relative;
+}
+
+.product .sale {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background: rgba(255, 0, 0, 0.688);
+  color: #fff;
+  border-radius: 3px;
+  font-size: 0.9rem;
+  padding: 3px 7px;
+}

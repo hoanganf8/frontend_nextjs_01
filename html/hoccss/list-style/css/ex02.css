@@ -1,0 +1,16 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.songs {
+  width: 300px;
+  border: 1px solid red;
+  margin: 30px auto;
+}
+
+.songs h2 {
+  padding: 10px 0;
+  display: list-item;
+  list-style: inside decimal-leading-zero;
+}

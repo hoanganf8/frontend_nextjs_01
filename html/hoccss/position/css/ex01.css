@@ -1,0 +1,56 @@
+body {
+  height: 2000px;
+}
+
+.box {
+  border: 1px solid red;
+  width: 300px;
+  height: 300px;
+  margin: 30px auto;
+  position: relative;
+}
+
+.item {
+  width: 100px;
+  height: 50px;
+  line-height: 50px;
+  color: #fff;
+  text-align: center;
+  background-color: green;
+  border: 1px solid #fff;
+}
+
+.item:nth-child(2) {
+  /* position: relative;
+  left: 20px;
+  top: 20px;
+  z-index: 1; */
+  /* width: auto;
+  height: auto;
+  position: absolute; */
+  /* left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0; */
+  /* inset: 10px; */
+  position: fixed;
+  right: 0;
+  top: 0;
+}
+
+/*
+Position CSS
+- Thuộc tính position
++ relative: Vị trí tương đối
++ absolute: Vị trí tuyệt đối
++ fixed: Vị trí cố định (Khi scroll)
++ static: Không có position
+
+- Thuộc tính mở rộng
++ top
++ left
++ right
++ bottom
++ z-index
++ inset
+*/

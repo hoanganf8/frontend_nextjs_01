@@ -1,0 +1,57 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  outline: 0;
+}
+
+.social {
+  width: 300px;
+  border: 1px solid red;
+  margin: 30px auto;
+  list-style: none;
+  padding: 15px;
+}
+
+.social li {
+  line-height: 1.5;
+}
+
+/* .social li i {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  background: green;
+  color: #fff;
+  text-align: center;
+  line-height: 20px;
+  border-radius: 50%;
+  font-size: 0.85rem;
+} */
+
+.social li::before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  background: green;
+  color: #fff;
+  text-align: center;
+  line-height: 20px;
+  border-radius: 50%;
+  font-size: 0.85rem;
+  margin-right: 5px;
+  font-family: "Font Awesome 6 Brands";
+}
+
+.social li.facebook::before {
+  content: "\f39e";
+}
+
+.social li.twitter::before {
+  content: "\f099";
+}
+
+.social li.youtube::before {
+  content: "\f167";
+}
