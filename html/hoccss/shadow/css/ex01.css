@@ -1,0 +1,46 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.box {
+  background: green;
+  color: #fff;
+  width: 300px;
+  height: 200px;
+  margin: 30px auto;
+  /* box-shadow: 0 0 10px 5px rgb(255, 0, 0); */
+  /* box-shadow: rgba(0, 0, 0, 0.35) 0px -50px 36px -28px inset; */
+  text-shadow: 3px 3px 3px red;
+}
+
+/*
+box-shadow: Đổ bóng cho khối
+box-shadow: x-offset y-offset blur spread color
++ x-offset: Vị trí bóng theo trục x
++ y-offset: Vị trí bóng theo trục y
++ blur: Độ nhòe của bóng
++ spread: Kích thước của bóng
++ color: Màu của bóng
+
+text-shadow: Đổ bóng cho chữ
+text-shadow: x-offset y-offset blur color
+
+Buổi sau: 
+- Background Gradient: Linear, Radial
+- Responsive Web Design
+
+1. Breakpoint là gì? 
+
+2. Các Breakpoint phổ biến
+
+3. Phân biệt Desktop First, Mobile Frist
+
+4. Media Query CSS
+=> https://developer.mozilla.org/en-US/docs/Web/CSS/@media
+
+5. Viết Media Query theo Desktop First, Mobile First
+
+6. Nên dùng Desktop First hay Mobile First? Tại sao?
+*/

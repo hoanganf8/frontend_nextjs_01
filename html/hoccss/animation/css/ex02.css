@@ -1,0 +1,41 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.music-bar {
+  display: flex;
+  width: 200px;
+  height: 70px;
+  margin: 30px auto;
+  gap: 10px;
+  align-items: flex-end;
+}
+
+.music-bar span {
+  display: block;
+  width: 30px;
+  height: 20px;
+  background: red;
+  border-radius: 5px;
+  animation: wave 1s ease-in-out infinite;
+}
+
+.music-bar span:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+.music-bar span:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+.music-bar span:nth-child(4) {
+  animation-delay: 0.3s;
+}
+
+@keyframes wave {
+  50% {
+    height: 100%;
+  }
+}
