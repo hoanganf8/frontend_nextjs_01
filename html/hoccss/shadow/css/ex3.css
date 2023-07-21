@@ -1,0 +1,29 @@
+body {
+    padding: 20px;
+    font-family: system-ui;
+}
+
+.chat {
+    position: relative;
+    padding: 16px;
+    border-radius: 10px;
+    background: #fff;
+    /* box-shadow: 0 0 5px rgba(0, 0, 0, 0.5); */
+    filter: drop-shadow(0 0 5px rgba(0, 0, 0, 1));
+}
+
+.chat::after {
+    content: "";
+    position: absolute;
+    right: 30px;
+    bottom: -22px;
+    border: 12px solid;
+    border-color: #fff transparent transparent;
+}
+
+img {
+    margin-top: 50px;
+    /* box-shadow: 0 0 5px #000; */
+    filter: drop-shadow(0 0 5px #000);
+    background: #fff;
+}

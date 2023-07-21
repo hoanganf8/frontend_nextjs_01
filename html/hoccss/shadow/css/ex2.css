@@ -1,0 +1,22 @@
+/* h1 {
+    text-shadow: 3px 3px 5px red;
+} */
+
+body {
+    font-family: system-ui;
+}
+
+nav {
+    display: flex;
+}
+
+nav a {
+    padding: 10px;
+    text-decoration: none;
+    color: #000;
+}
+
+nav a:hover {
+    /* font-weight: 600; */
+    text-shadow: -0.2px -0.2px currentColor, 0.2px 0.2px currentColor;
+}

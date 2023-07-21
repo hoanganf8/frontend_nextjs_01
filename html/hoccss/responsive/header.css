@@ -1,0 +1,141 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --white: #fff;
+    --text-color: #343f52;
+    --primary-color: #5eb9f0;
+
+    --header-height: 85px;
+}
+
+body {
+    font-family: system-ui;
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    outline: none;
+    border: none;
+}
+
+.header .inner {
+    display: flex;
+    align-items: center;
+    width: 1140px;
+    max-width: 100%;
+    height: var(--header-height);
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.logo-link {
+    margin-right: auto;
+}
+
+.logo-link img {
+    height: 26px;
+}
+
+.btn-primary {
+    min-width: 105px;
+    margin-left: 20px;
+    color: var(--white);
+    padding: 16px 20px;
+    background: var(--primary-color);
+    border-radius: 99px;
+}
+
+.menu-btn {
+    margin-left: 16px;
+    font-size: 24px;
+}
+
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(30,34,40,.7);
+    /* opacity: 0;
+    visibility: hidden; */
+    display: none;
+    transition: opacity, visibility;
+    transition-duration: .5s;
+    animation: fadeIn .5s;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Mobile & Tablet */
+@media screen and (max-width: 991.98px) {
+    .nav {
+        position: fixed;
+        inset: 0 auto 0 0;
+        width: 300px;
+        background: #1e2228;
+        z-index: 1;
+        translate: -100%;
+        transition: translate .5s;
+        padding: 30px;
+    }
+
+    .nav a {
+        display: block;
+        padding: 16px 0;
+        color: var(--white);
+    }
+
+    .menu-input:checked ~ .nav {
+        translate: 0;
+    }
+
+    .menu-input:checked ~ .overlay {
+        /* opacity: 1;
+        visibility: visible; */
+        display: block;
+    }
+}
+
+/* Mobile */
+@media screen and (max-width: 575.98px) {
+    .btn-primary {
+        display: none;
+    }
+}
+
+/* Tablet */
+@media screen and (min-width: 576px) and (max-width: 991.98px) {
+    
+}
+
+/* Desktop */
+@media screen and (min-width: 992px) {
+    .nav ul {
+        display: flex;
+    }
+    
+    .nav a {
+        color: var(--text-color);
+        font-size: 17px;
+        padding: 24px 20px;
+        transition: color .5s;
+    }
+    
+    .nav a:hover {
+        color: var(--primary-color);
+    }
+
+    .menu-btn {
+        display: none;
+    }
+}
