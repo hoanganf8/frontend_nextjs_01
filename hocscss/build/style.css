@@ -1,0 +1,15 @@
+body {
+  font-family: Roboto, sans-serif;
+  line-height: 1.2;
+  color: #333;
+}
+
+.header {
+  padding: 20px 0;
+}
+
+.logo {
+  max-height: 150px;
+}
+
+/*# sourceMappingURL=style.css.map */
