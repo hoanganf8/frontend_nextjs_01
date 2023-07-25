@@ -1,0 +1,55 @@
+@charset "UTF-8";
+/*
+Toán tử và biểu thức
+
+1. Toán tử số học
+
++, -, *, /, % (Chia lấy dư)
+
+2. Toán tử logic
+
+>, <, >=, <=, !=, ==
+
+=> Dùng trong câu lệnh rẽ nhánh @if @else
+
+3. Toán tử gán (:)
+Ví dụ: 
+$a: 1;
+
+4. Toán tử lý luận
+and, or, not => Dùng để kết hợp các toán tử logic
+
+Nối chuỗi: Dùng dấu +
+*/
+/*
+Câu lệnh rẽ nhánh @if @else
+
+@if (condition) {
+    //Body
+}
+
+@if (condition) {
+    //Body true
+} @else {
+    //Body false
+}
+
+@if (condition) {
+    //Body
+} @else if (condition) {
+    //Body
+} @else if (condition) {
+    //Body
+} @else {
+    //Body
+}
+*/
+.col-5 {
+  width: 50%;
+}
+
+.size {
+  width: 10%;
+}
+
+/*# sourceMappingURL=ex02.css.map */

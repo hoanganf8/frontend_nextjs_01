@@ -1,0 +1,82 @@
+/*
+Toán tử và biểu thức
+
+1. Toán tử số học
+
++, -, *, /, % (Chia lấy dư)
+
+2. Toán tử logic
+
+>, <, >=, <=, !=, ==
+
+=> Dùng trong câu lệnh rẽ nhánh @if @else
+
+3. Toán tử gán (:)
+Ví dụ: 
+$a: 1;
+
+4. Toán tử lý luận
+and, or, not => Dùng để kết hợp các toán tử logic
+
+Nối chuỗi: Dùng dấu +
+*/
+
+// $prefix: "col";
+// $breakpoint: "md";
+// $number: 5;
+
+//.col-md-5
+// #{"." + $prefix + "-" + $breakpoint + "-" + $number} {
+//   width: 50%;
+// }
+
+// .#{$prefix}-#{$breakpoint}-#{$number} {
+//   width: 50%;
+// }
+
+/*
+Câu lệnh rẽ nhánh @if @else
+
+@if (condition) {
+    //Body
+}
+
+@if (condition) {
+    //Body true
+} @else {
+    //Body false
+}
+
+@if (condition) {
+    //Body
+} @else if (condition) {
+    //Body
+} @else if (condition) {
+    //Body
+} @else {
+    //Body
+}
+*/
+
+$prefix: "col";
+$breakpoint: "";
+$number: 5;
+
+$selector: #{"." + $prefix}-#{$number};
+
+@if ($breakpoint != "") {
+  $selector: #{"." + $prefix}-#{$breakpoint}-#{$number};
+}
+
+#{$selector} {
+  width: 50%;
+}
+
+$width: 10;
+.size {
+  @if ($width > 0) {
+    width: $width + 0%;
+  } @else {
+    width: 0;
+  }
+}

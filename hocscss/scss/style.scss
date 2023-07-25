@@ -1,0 +1,23 @@
+//Import Parts
+@import "parts/variables"; //Khai báo biến
+@import "parts/fonts"; //Nạp font
+@import "parts/reset"; //Reset CSS
+@import "parts/mixin"; //Định nghĩa mixin để kế thừa
+@import "parts/base"; //Định nghĩa các class hay dùng
+
+//Import Layouts
+@import "layouts/header"; //Header
+@import "layouts/breadcrumbs"; //Breadcrumbs
+@import "layouts/footer"; //Footer
+
+//Import Pages
+
+//1. Home
+@import "pages/home/slide";
+@import "pages/home/hero";
+@import "pages/home/products";
+
+//2. About
+@import "pages/about/title";
+@import "pages/about/content";
+@import "pages/about/testimonials";

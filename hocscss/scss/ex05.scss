@@ -1,0 +1,50 @@
+//Vòng lặp for through
+//=> Lặp với số lần lặp xác định trước
+
+// @for $i from 1 through 12 {
+//   .col-#{$i} {
+//     --column-size: #{$i};
+//   }
+// }
+
+// @for $i from 1 through 5 {
+//   .column-#{$i} {
+//     @if ($i % 2 != 0) {
+//       width: #{$i * 10 + 0%};
+//     } @else {
+//       width: #{$i * 15 + 0%};
+//     }
+//   }
+// }
+
+//Vòng lặp @each
+// $sizes: 20, 40, 60, 80, 100;
+
+// @each $size in $sizes {
+//   .w-#{$size} {
+//     width: #{$size + 0%};
+//   }
+// }
+
+// $sizes: (small, 40, normal), (medium, 60, 400), (large, 80, 600);
+
+// @each $name, $size, $weight in $sizes {
+//   .col-#{$name} {
+//     width: #{$size + 0%};
+//     font-weight: $weight;
+//   }
+// }
+
+//Map
+$sizes: (
+  small: 40,
+  medium: 60,
+  large: 80,
+  xlarge: 100,
+);
+
+@each $name, $size in $sizes {
+  .col-#{$name} {
+    width: #{$size + 0%};
+  }
+}

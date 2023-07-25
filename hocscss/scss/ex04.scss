@@ -1,0 +1,39 @@
+@mixin center($type) {
+  //Viết nội dung mixin
+  @if ($type == flex) {
+    display: flex;
+    justify-content: center;
+  } @else if ($type == position) {
+    position: relative;
+    > * {
+      position: absolute;
+      left: 50%;
+      translate: -50%;
+    }
+  } @else if ($type == margin) {
+    > * {
+      margin: 0 auto;
+    }
+  } @else {
+    text-align: center;
+    > * {
+      display: inline-block;
+      text-align: left;
+    }
+  }
+}
+
+.container {
+  @include center(text);
+  div {
+    width: 300px;
+    border: 1px solid red;
+  }
+}
+
+/*
+Nếu $type = flex => Căn giữa bằng flex
+Nếu $type = position => Căn giữa bằng position
+Nếu $type = margin => Căn giữa bằng margin
+Nếu $type = text => Căn giữa khối bằng text-align
+*/

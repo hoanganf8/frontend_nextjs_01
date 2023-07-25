@@ -1,0 +1,99 @@
+/*
+Kế thừa trong SCSS
+
+1. extend
+
+Cú pháp: @extend selector
+
+2. placeholder
+
+2.1. Định nghĩa placeholder
+
+%tenplaceholder {
+    //Code CSS
+}
+
+2.2. Gọi placeholder
+
+@extend %tenplaceholder;
+
+3. mixin
+
+3.1. Định nghĩa mixin
+
+@mixin tenmixin {
+    //Nội dung
+}
+
+@minxin tenmixin(thamso1, thamso2,...) {
+    //Nộ dung
+}
+
+3.2. Gọi mixin
+
+@include tenmixin;
+
+@include tenmixin(doiso1, doiso2,...)
+*/
+
+// .box {
+//   padding: 30px 0;
+//   border: 1px solid #ccc;
+// }
+
+@import "parts/reset";
+@import "parts/mixin";
+
+%section-base {
+  padding: 30px 0;
+  border: 1px solid #ccc;
+}
+
+.posts {
+  background: green;
+  @extend %section-base;
+}
+
+.products {
+  background: gray;
+  @extend %section-base;
+}
+
+.services {
+  background: goldenrod;
+  @include section-base;
+}
+
+.menu {
+  li {
+    a {
+      &.active {
+        color: red;
+      }
+      &:hover {
+        @extend .active;
+      }
+    }
+  }
+}
+
+.carousel-controls {
+  .nav-prev {
+    background: green;
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+  }
+
+  .nav-next {
+    @extend .nav-prev;
+    right: 0;
+    left: auto;
+  }
+}
+
+.container {
+  @include center(1000px, 30px);
+}
