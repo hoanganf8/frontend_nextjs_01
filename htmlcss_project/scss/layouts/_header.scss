@@ -1,0 +1,139 @@
+.header {
+  padding: 15px 0;
+  box-shadow: 0px 1.6666666269302368px 8.333333015441895px 0px
+    rgba(0, 0, 0, 0.15);
+  .logo {
+    height: 95px;
+    img {
+      max-height: 100%;
+      width: auto;
+    }
+  }
+  .header-nav {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    .menu {
+      ul {
+        display: flex;
+        li {
+          padding: 0 25px;
+          a {
+            font-weight: 600;
+            padding-bottom: 54px;
+          }
+
+          &.active {
+            a {
+              color: $primaryColor;
+              border-bottom: 1.667px solid $primaryColor;
+            }
+          }
+
+          &:hover {
+            @extend .active;
+          }
+        }
+      }
+    }
+
+    .menu-overlay {
+      opacity: 0;
+      visibility: hidden;
+      transition: 0.4s ease;
+      transition-property: opacity, visibility;
+    }
+
+    .cart-icon {
+      padding: 0 25px;
+      a {
+        position: relative;
+        span {
+          position: absolute;
+          top: -6px;
+          right: -7px;
+          font-size: 1.3rem;
+          background: $secondaryColor;
+          color: #fff;
+          padding: 0 5px;
+          border-radius: 50%;
+        }
+      }
+    }
+
+    .search-icon {
+      padding-left: 25px;
+    }
+  }
+
+  .menu-toggle {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 991.98px) {
+  .header {
+    .menu-toggle {
+      display: block;
+      label {
+        font-size: 2rem;
+      }
+    }
+
+    .header-nav {
+      .menu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        z-index: 2;
+        background: $primaryColor;
+        min-width: 250px;
+        padding: 20px 0;
+        translate: -100%;
+        transition: translate 0.4s ease;
+        ul {
+          display: block;
+          li {
+            a {
+              color: #fff !important;
+              border: 0 !important;
+              display: block;
+              padding: 10px 0;
+            }
+          }
+        }
+      }
+
+      .menu-overlay {
+        position: fixed;
+        inset: 0;
+        z-index: 1;
+        background: #00000070;
+      }
+
+      .search-icon {
+        padding-left: 0;
+      }
+
+      input[type="checkbox"] {
+        &:checked {
+          ~ .menu {
+            translate: 0;
+          }
+
+          ~ .menu-overlay {
+            opacity: 1;
+            visibility: visible;
+          }
+        }
+      }
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}

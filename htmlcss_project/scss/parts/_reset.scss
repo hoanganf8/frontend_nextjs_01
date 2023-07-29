@@ -1,0 +1,38 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  outline: 0;
+  border: 0;
+}
+
+html {
+  font-size: 10px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: $fonts;
+  font-size: $fontSize;
+  color: $textColor;
+  line-height: 1.25;
+}
+
+a {
+  text-decoration: none;
+  color: $linkColor;
+  &:hover {
+    color: $primaryColor;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+ul,
+ol {
+  list-style: none;
+}
