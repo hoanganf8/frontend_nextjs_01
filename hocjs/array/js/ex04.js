@@ -83,3 +83,12 @@ var studentInactive = students.reduce(function (prev, current) {
 }, []);
 
 console.log(studentInactive);
+
+/*
+Buổi sau: 
+- Tham chiếu trong Array
+- Copy Array: Deep và Shallow
+- Array-like Object
+- Array.from()
+- Tìm hiểu về Object: Literal Object, Function Constructor
+*/
