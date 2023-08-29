@@ -22,6 +22,7 @@ var user = {
 console.log(user.getInfo());
 // console.log(user.children.getAddress());
 console.log(user.children.getName(user));
+ơ;
 
 var customer = {
   name: "Hoàng An",
