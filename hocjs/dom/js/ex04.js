@@ -72,3 +72,7 @@ console.log(title.classList.contains("title-2"));
 //4. Toggle class
 title.classList.toggle("show");
 title.classList.toggle("show");
+
+//Xóa element: tenelement.remove()
+
+title.remove();
