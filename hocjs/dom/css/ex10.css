@@ -1,0 +1,49 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.player {
+  max-width: 90%;
+  margin: 30px auto;
+}
+.player .play-btn {
+  text-align: center;
+}
+
+.player .play-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+}
+
+.progress-bar {
+  background: gray;
+  height: 10px;
+  position: relative;
+  cursor: pointer;
+  width: 100%;
+}
+
+.progress-bar .progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  background: red;
+}
+
+.progress-bar .progress span {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  width: 13px;
+  height: 13px;
+  background: blueviolet;
+  border-radius: 50%;
+  display: block;
+  translate: 50% -50%;
+}
