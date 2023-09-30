@@ -118,12 +118,14 @@ audio.addEventListener("timeupdate", function () {
   //Lấy thời gian hiện tại của bài hát
   var currentTime = audio.currentTime;
 
+    //Chuyển currentTime thành phần trăm
+    var percent = (currentTime * 100) / audio.duration;
+  
+  //if cái gì đó {
   //Show currentTime lên UI
   currentTimeEl.innerText = getTime(currentTime);
 
-  //Chuyển currentTime thành phần trăm
-  var percent = (currentTime * 100) / audio.duration;
-
   //Cập nhật width vào progress
   progress.style.width = `${percent}%`;
+  //}
 });
