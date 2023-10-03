@@ -28,3 +28,5 @@ var content = document.querySelector(".content");
 
 var h2 = content.lastElementChild;
 console.log(h2.previousSibling.previousSibling);
+
+console.log(lyric);
