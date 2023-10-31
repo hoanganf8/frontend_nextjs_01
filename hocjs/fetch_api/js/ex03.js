@@ -1,9 +1,11 @@
 import { client } from "./client.js";
+import { config } from "./config.js";
+const { PAGE_LIMIT } = config;
 const root = document.querySelector("#root");
 const app = {
   query: {},
   order: "latest",
-  render: function (users) {
+  render: function (users, maxPage) {
     const htmlEntities = (html) => {
       return html.replaceAll("<", "&lt;").replaceAll(">", "&gt;");
     };
@@ -20,6 +22,13 @@ const app = {
           }>Cũ nhất</option>
         </select>
       </div>
+      <div class="col-9">
+        <form class="search">
+         <input type="search" class="form-control keyword" placeholder="Từ khóa..." value="${
+           this.query.q ?? ""
+         }"/>
+        </form>
+      </div>    
     </div>
     <table class="table table-bordered">
       <thead>
@@ -53,7 +62,25 @@ const app = {
           .join("")}
       </tbody>
     </table>
+    ${this.getPagination(maxPage)}
   </div>`;
+  },
+
+  getPagination: function (maxPage) {
+    const range = [...Array(maxPage).keys()];
+    return `<ul class="pagination justify-content-end pagination-sm">
+    <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+    ${range
+      .map(
+        (index) =>
+          `<li class="page-item ${
+            index + 1 === this.query._page ? "active" : ""
+          }"><a class="page-link" href="#">${index + 1}</a></li>`,
+      )
+      .join("")}
+   
+    <li class="page-item"><a class="page-link" href="#">Next</a></li>
+  </ul>`;
   },
 
   addEvent: function () {
@@ -61,6 +88,14 @@ const app = {
       if (e.target.classList.contains("sort-by")) {
         const value = e.target.value;
         this.handleSort(value);
+      }
+    });
+
+    root.addEventListener("submit", (e) => {
+      if (e.target.classList.contains("search")) {
+        e.preventDefault();
+        const keyword = e.target.children[0].value;
+        this.handleSearch(keyword);
       }
     });
   },
@@ -71,19 +106,28 @@ const app = {
     this.getUsers(this.query);
   },
 
+  handleSearch: function (keyword) {
+    this.query.q = keyword;
+    this.getUsers(this.query);
+  },
+
   getUsers: async function (query = {}) {
     let queryString = new URLSearchParams(query).toString();
     if (queryString) {
       queryString = "?" + queryString;
     }
-    const { data: users } = await client.get("/users" + queryString);
-    this.render(users);
+    const { response, data: users } = await client.get("/users" + queryString);
+    const total = response.headers.get("x-total-count");
+    const maxPage = Math.ceil(total / PAGE_LIMIT);
+    this.render(users, maxPage);
   },
 
   start: function () {
     Object.assign(this.query, {
       _sort: "id",
       _order: "desc",
+      _limit: PAGE_LIMIT,
+      _page: 1,
     });
 
     this.getUsers(this.query);
