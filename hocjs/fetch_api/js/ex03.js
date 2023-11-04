@@ -5,12 +5,15 @@ const root = document.querySelector("#root");
 const app = {
   query: {},
   order: "latest",
+  modalEl: document.querySelector("#modal-add"),
+  modal: new bootstrap.Modal(document.querySelector("#modal-add")),
   render: function (users, maxPage) {
     const htmlEntities = (html) => {
       return html.replaceAll("<", "&lt;").replaceAll(">", "&gt;");
     };
     root.innerHTML = `<div class="container py-3">
     <h2>Danh sách người dùng</h2>
+    <button class="btn btn-primary mb-2 btn-add">Thêm mới</button>
     <div class="row mb-3">
       <div class="col-3">
         <select class="form-select sort-by">
@@ -120,12 +123,51 @@ const app = {
         e.preventDefault();
         this.goPage(this.query._page - 1);
       }
+
+      if (e.target.classList.contains("btn-add")) {
+        this.showFormAdd();
+      }
+    });
+
+    this.modalEl.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const form = Object.fromEntries([...new FormData(e.target)]);
+      //Submit => Lấy data => Call API => Response ok => Đóng modal => Render Table
+      const response = await this.postUser(form);
+      if (response.ok) {
+        this.modal.hide();
+        this.query._page = 1;
+        this.getUsers(this.query);
+      }
     });
   },
 
   goPage: function (page) {
     this.query._page = +page;
     this.getUsers(this.query);
+  },
+
+  showFormAdd: function () {
+    this.modal.show();
+    this.modalEl.querySelector(".modal-title").innerText = `Thêm người dùng`;
+    this.modalEl.querySelector(".modal-body").innerHTML = `
+    <form class="form-add">
+      <div class="mb-3">
+        <label>Tên</label>
+        <input type="text" name="name" class="form-control" placeholder="Tên..." required>
+      </div>
+      <div class="mb-3">
+        <label>Email</label>
+        <input type="email" name="email" class="form-control" placeholder="Email..." required>
+      </div>
+      <button type="submit" class="btn btn-primary">Lưu</button>
+    </form>
+    `;
+  },
+
+  postUser: async function (data) {
+    const { response } = await client.post("/users", data);
+    return response;
   },
 
   handleSort: function (value) {
@@ -167,3 +209,24 @@ const app = {
 };
 
 app.start();
+
+/*
+Phân tích chức năng sửa
+- Click Edit button -> id cần sửa
+- Show form
+- Lấy dữ liệu của user theo id (Call API)
+- Lắng nghe sự kiện submit form
+- Lấy Data
+- Call API với data và id cần sửa
+- Kiểm tra response
+- Đóng modal
+- Re-render
+
+Phân tích chức năng xóa
+- Click Delete button -> id cần xóa
+- Call API
+- Kiểm tra response
+- Re-render
+
+Lưu ý khi làm chức năng thêm, xóa -> Chuyển về trang 1 sau khi đã thêm hoặc xóa
+*/
