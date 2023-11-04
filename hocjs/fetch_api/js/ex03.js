@@ -69,17 +69,24 @@ const app = {
   getPagination: function (maxPage) {
     const range = [...Array(maxPage).keys()];
     return `<ul class="pagination justify-content-end pagination-sm">
-    <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+    ${
+      this.query._page > 1
+        ? `<li class="page-item"><a class="page-link page-prev" href="#">Previous</a></li>`
+        : ""
+    }
     ${range
       .map(
         (index) =>
           `<li class="page-item ${
             index + 1 === this.query._page ? "active" : ""
-          }"><a class="page-link" href="#">${index + 1}</a></li>`,
+          }"><a class="page-link page-number" href="#">${index + 1}</a></li>`,
       )
       .join("")}
-   
-    <li class="page-item"><a class="page-link" href="#">Next</a></li>
+    ${
+      this.query._page < maxPage
+        ? `<li class="page-item"><a class="page-link page-next" href="#">Next</a></li>`
+        : ""
+    }
   </ul>`;
   },
 
@@ -98,6 +105,27 @@ const app = {
         this.handleSearch(keyword);
       }
     });
+
+    root.addEventListener("click", (e) => {
+      if (e.target.classList.contains("page-number")) {
+        e.preventDefault();
+        const page = e.target.innerText;
+        this.goPage(page);
+      }
+      if (e.target.classList.contains("page-next")) {
+        e.preventDefault();
+        this.goPage(this.query._page + 1);
+      }
+      if (e.target.classList.contains("page-prev")) {
+        e.preventDefault();
+        this.goPage(this.query._page - 1);
+      }
+    });
+  },
+
+  goPage: function (page) {
+    this.query._page = +page;
+    this.getUsers(this.query);
   },
 
   handleSort: function (value) {
@@ -120,6 +148,9 @@ const app = {
     const total = response.headers.get("x-total-count");
     const maxPage = Math.ceil(total / PAGE_LIMIT);
     this.render(users, maxPage);
+    window.scroll({
+      top: 0,
+    });
   },
 
   start: function () {
