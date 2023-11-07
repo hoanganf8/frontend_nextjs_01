@@ -2,12 +2,24 @@ import { config } from "./config.js";
 const { SERVER_API } = config;
 
 export const client = {
+  serverApi: SERVER_API, //1
+  token: null,
+  //2
+  setUrl: function (url) {
+    this.serverApi = url;
+  },
+  setToken: function (token) {
+    this.token = token;
+  },
   send: async function (url, method = "GET", body = null) {
-    url = `${SERVER_API}${url}`;
+    url = `${this.serverApi}${url}`; //3
     //Tác vụ call api
     const headers = {
       "Content-Type": "application/json",
     };
+    if (this.token) {
+      headers["Authorization"] = `Bearer ${this.token}`;
+    }
     const options = {
       method,
       headers,
