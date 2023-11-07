@@ -63,6 +63,18 @@ const app = {
       const data = Object.fromEntries(form);
       this.login(data, e.target);
     });
+    root.addEventListener("click", (e) => {
+      if (e.target.classList.contains("logout")) {
+        e.preventDefault();
+        this.handleLogout();
+      }
+    });
+  },
+  handleLogout: function () {
+    localStorage.removeItem("login_token");
+    this.loginStatus = false;
+    //Call API /logout
+    this.render();
   },
   login: async function ({ email, password }, el) {
     this.loading(el);
