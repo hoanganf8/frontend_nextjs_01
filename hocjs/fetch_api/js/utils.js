@@ -12,11 +12,6 @@ export const requestRefresh = async (client) => {
       refreshToken,
     });
 
-    if (!response.ok) {
-      //Không lấy được token mới
-      throw new Error("Refresh token Unauthorize");
-    }
-
     saveToken(data); //Lưu token vào Storage
 
     return data;

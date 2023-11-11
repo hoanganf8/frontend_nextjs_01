@@ -121,13 +121,16 @@ const app = {
         <h2 class="text-center">Chờ tý...</h2>
         </div>`;
         client.setToken(accessToken);
-        const { data: user, response } = await client.get("/auth/profile");
-        if (!response.ok) {
-          // this.loginStatus = false;
-          // this.handleLogout();
+        const result = await client.get("/auth/profile");
+
+        if (!result) {
+          //Refresh hết hạn -> Logout
+          this.handleLogout();
           return;
         }
-        // console.log(user);
+
+        const { data: user } = result;
+
         this.loginStatus = true;
         this.user = user;
         this.render();

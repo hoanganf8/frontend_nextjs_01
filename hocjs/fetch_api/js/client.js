@@ -3,6 +3,7 @@ import { requestRefresh } from "./utils.js";
 const { SERVER_API } = config;
 
 export const client = {
+  requestRefresh: null, //Lưu promise của hàm requestRefresh
   serverApi: SERVER_API, //1
   token: null,
   //2
@@ -35,16 +36,17 @@ export const client = {
       //Check token ở đây --> Nếu hết hạn -> Gọi API Refresh -> Lưu lại -> Gọi lại hàm send()
 
       if (!response.ok) {
-        const newToken = await requestRefresh(this);
-
-        if (newToken) {
-          //Xử lý --> Lưu token vào localStorage
-          this.token = newToken.access_token;
-          //Xử lý --> Gọi lại hàm send
-          return this.send(path, method, body);
-        } else {
-          //Logout
+        if (!this.requestRefresh) {
+          this.requestRefresh = requestRefresh(this);
+          const newToken = await this.requestRefresh;
+          if (newToken) {
+            //Xử lý --> Lưu token vào localStorage
+            this.token = newToken.access_token;
+            //Xử lý --> Gọi lại hàm send
+            return this.send(path, method, body);
+          }
         }
+        return false;
       }
       const data = await response.json();
       return { response, data };
