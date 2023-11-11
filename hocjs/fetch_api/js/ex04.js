@@ -123,7 +123,8 @@ const app = {
         client.setToken(accessToken);
         const { data: user, response } = await client.get("/auth/profile");
         if (!response.ok) {
-          this.loginStatus = false;
+          // this.loginStatus = false;
+          // this.handleLogout();
           return;
         }
         // console.log(user);
@@ -148,3 +149,7 @@ const app = {
 };
 
 app.start();
+
+/*
+Request 1 -> Khi access hết hạn -> Gửi request lấy access mới (Refresh) -> Lưu vào localStorage -> gọi lại Request 1
+*/
