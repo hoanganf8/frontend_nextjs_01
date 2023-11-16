@@ -1,0 +1,19 @@
+{
+  "name": "package",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "f8": "echo ABC"
+  },
+  "keywords": [],
+  "author": "Hoang An F8",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^5.3.2",
+    "datejs": "^1.0.0-rc3"
+  },
+  "devDependencies": {
+    "sass": "^1.69.5"
+  }
+}
