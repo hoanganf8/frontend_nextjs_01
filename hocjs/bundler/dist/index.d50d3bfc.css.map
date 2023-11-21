@@ -1,0 +1,1 @@
+{"mappings":"AACE","sources":["src/assets/style.scss"],"sourcesContent":["header {\r\n  h1 {\r\n    color: green;\r\n  }\r\n}\r\n"],"names":[],"version":3,"file":"index.d50d3bfc.css.map","sourceRoot":"/__parcel_source_root/"}

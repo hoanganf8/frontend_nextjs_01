@@ -1,0 +1,29 @@
+{
+  "name": "bundler",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "test": "rm -rf ./test && set NODE_ENV=testing && parcel build ./index.html --dist-dir=./test",
+    "start": "rm -rf ./.parcel-cache && rm -rf ./dist && parcel ./index.html --port=8080 --open --host=192.168.2.97",
+    "build": "rm -rf ./build && parcel build ./index.html --dist-dir=./build",
+    "clean": "rm -rf ./build && rm -rf ./test && rm -rf ./.parcel-cache && rm -rf ./dist"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.10.3",
+    "buffer": "^6.0.3",
+    "crypto-browserify": "^3.12.0",
+    "events": "^3.3.0",
+    "os-browserify": "^0.3.0",
+    "parcel": "^2.10.3",
+    "path-browserify": "^1.0.1",
+    "process": "^0.11.10",
+    "stream-browserify": "^3.0.0"
+  },
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "moment": "^2.29.4"
+  }
+}

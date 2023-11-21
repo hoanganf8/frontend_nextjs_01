@@ -1,0 +1,1 @@
+{"mappings":"ACCE","sources":["index.01a73827.css","src/assets/style.scss"],"sourcesContent":["header h1 {\n  color: green;\n}\n\n/*# sourceMappingURL=index.01a73827.css.map */\n","header {\r\n  h1 {\r\n    color: green;\r\n  }\r\n}\r\n"],"names":[],"version":3,"file":"index.01a73827.css.map"}
