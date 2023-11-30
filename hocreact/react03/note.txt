@@ -1,0 +1,21 @@
+Header
+    - TopBar
+    - Logo
+    - Menu
+
+Footer
+    - Logo
+    - Menu
+    - Copyright
+
+Product: 
+    - Title
+    - Meta
+    - Price
+
+App 
+    - Header 
+    - Product
+    - Footer   
+
+A => B => C => D ==> Context
