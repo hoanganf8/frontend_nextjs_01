@@ -1,8 +1,11 @@
 const initialState = {
-  todoList: ["CV 1", "CV 2", "CV 3"],
+  todoList: [],
 };
 export const todoReducer = (state = initialState, action) => {
   switch (action.type) {
+    case "todo/fetch": {
+      return { ...state, todoList: action.payload };
+    }
     case "todo/add": {
       return { ...state, todoList: [...state.todoList, action.payload] };
     }

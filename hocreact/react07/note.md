@@ -16,3 +16,7 @@
 - Redux Core: Tự setup redux vào dự án theo cách thủ công --> Hiểu cách hoạt động của Redux
 - Redux Toolkit: Bộ đóng gói của thư viện Redux giúp setup nhanh, code ít hơn,...
 - Redux Middleware: Redux Thunk
+
+# Redux Middleware
+
+Component --> Dispatch tới Middleware --> Dispatch tới Reducer --> Update State
