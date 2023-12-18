@@ -1,7 +1,10 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 const TodoList = () => {
-  const todoList = useSelector((state) => state.todoList);
+  const todoList = useSelector((state) => {
+    console.log(state);
+    return state.todo.todoList;
+  });
   const [name, setName] = useState("");
   const dispatch = useDispatch();
   const handleSubmit = (e) => {
