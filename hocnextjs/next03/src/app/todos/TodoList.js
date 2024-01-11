@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+// import { useState } from "react";
 import useSWR from "swr";
 const fetcher = (url) => fetch(url).then((res) => res.json()); //Trả về promise
 const TodoList = () => {
@@ -7,32 +7,16 @@ const TodoList = () => {
     data: todoList,
     error,
     isLoading,
-    mutate,
   } = useSWR("http://localhost:3005/todos", fetcher, {
     fallbackData: [],
+    revalidateOnFocus: false,
+    refreshInterval: 5000,
   });
 
-  const [name, setName] = useState("");
+  // const [name, setName] = useState("");
   if (error) {
     return <h3>Đã có lỗi xảy ra</h3>;
   }
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    const response = await fetch("http://localhost:3005/todos", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ name }),
-    });
-    if (response.ok) {
-      const todo = await response.json();
-
-      mutate([...todoList, todo], {
-        revalidate: false,
-      }); //re-fetch
-    }
-  };
 
   return (
     <>
@@ -43,15 +27,6 @@ const TodoList = () => {
           todoList.map(({ id, name }) => <li key={id}>{name}</li>)
         )}
       </ul>
-      <form action="" onSubmit={handleSubmit}>
-        <input
-          type="text"
-          placeholder="Tên công việc..."
-          onChange={(e) => setName(e.target.value)}
-          value={name}
-        />
-        <button>Thêm</button>
-      </form>
     </>
   );
 };

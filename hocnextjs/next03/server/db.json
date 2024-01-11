@@ -1,39 +1,39 @@
 {
   "todos": [
     {
-      "id": 1,
-      "name": "Công việc 1"
+      "name": "Học html css",
+      "id": 1
     },
     {
-      "id": 2,
-      "name": "Công việc 2"
+      "name": "Học Javascript",
+      "id": 2
     },
     {
-      "id": 3,
-      "name": "Công việc 3"
+      "name": "Học React",
+      "id": 3
     },
     {
-      "name": "Công việc 4",
+      "name": "Test 1",
       "id": 4
     },
     {
-      "name": "Công việc 5",
+      "name": "Test 2",
       "id": 5
     },
     {
-      "name": "Công việc 6",
+      "name": "Test 3",
       "id": 6
     },
     {
-      "name": "Công việc 7",
+      "name": "Test 4",
       "id": 7
     },
     {
-      "name": "Công việc 8",
+      "name": "Test 5",
       "id": 8
     },
     {
-      "name": "Công việc 9",
+      "name": "Test 6",
       "id": 9
     }
   ]
