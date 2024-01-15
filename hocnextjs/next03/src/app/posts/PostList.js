@@ -2,9 +2,11 @@
 import useSWR from "swr";
 import { toast } from "react-toastify";
 import { useEffect } from "react";
+import Link from "next/link";
 const fetcher = (url) => fetch(url).then((res) => res.json());
 const postApi = `https://jsonplaceholder.typicode.com/posts`;
 const PostList = () => {
+  console.log(process.env.APP_NAME);
   const { data, isLoading, error } = useSWR(postApi, fetcher, {
     fallbackData: [],
     revalidateOnReconnect: false,
@@ -27,7 +29,11 @@ const PostList = () => {
       {isLoading ? (
         <h3>Loading...</h3>
       ) : (
-        data.map(({ id, title }) => <h3 key={id}>{title}</h3>)
+        data.map(({ id, title }) => (
+          <h3 key={id}>
+            {title} <Link href={`/posts/${id}`}>Chi tiết</Link>
+          </h3>
+        ))
       )}
     </div>
   );
